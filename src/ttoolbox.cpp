@@ -1,5 +1,7 @@
 #include "ttoolbox.h"
 
+#define MC_SHOW_STEP_ANALYSE
+
 std::string TToolBox::mNzero(int i)
 {
     std::ostringstream convert;
@@ -43,7 +45,6 @@ std::vector<std::vector<cv::Point>> TToolBox::applyCannyEdgeAndCalcCountours(cv:
     // Find contours, use RETR_EXTERNAL ignore inner child structures, TREE more usefull ?
     cv::findContours( imgCannyEdge, contours, hierarchy, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE, cv::Point(0, 0) );
 
-#define MC_SHOW_STEP_ANALYSE
 #ifdef  MC_SHOW_STEP_ANALYSE
     // Draw contours on extra mat
     cv::Mat imgContour = cv::Mat::zeros( imgCannyEdge.size(), CV_8UC3 );

@@ -6,7 +6,7 @@
 ## project aim
 
 * extract movement trajectory of moving objects in videos from image based tracking
-* process a small example (download linked attached) of a moving bug (species: Nebria brevicollis)
+* process a small example (see download link) of a moving bug (species: Nebria brevicollis)
 
 ## supported os
 
@@ -82,8 +82,7 @@ step 0) project trajectory position data from camera space into real world space
 
 step 1) summaries all position in a trajectory file
 
-# 
-## howto run the code
+# compile the code
 
 ```bash
 cmake .
@@ -91,13 +90,55 @@ make -j 10
 cd bin
 ```
 
+# process the example
 
-## build bgslib on linux debian
+## download example
+
+dowload 316 mb example data from http://t2solve.com/realbugtracker/rec97371911.tar.gz to examples folder
+or use the script [here](examples/downloadExample.sh) or use the following steps below. please verify the tar file via checksum
+
+```bash
+cd examples
+echo "download the example file" 
+wget http://t2solve.com/realbugtracker/rec97371911.tar.gz
+echo "download the checksum file " 
+wget http://t2solve.com/realbugtracker/rec97371911.tar.gz.sha512
+echo "validate checksum" 
+sha512sum -c rec97371911.tar.gz.sha512
+```
+
+## unpack example
+
+```bash
+tar xzvf rec97371911.tar.gz
+```
+
+## read docu
+
+```bash
+#file meaning
+more rec97371911/README.md
+#howtp start Tool 1
+more rec97371911/runStep1.sh
+#howtp start Tool 2
+more rec97371911/runStep2.sh
+#howtp start Tool 3
+more rec97371911/runStep3.sh
+```
+
+## run example
+
+```bash
+cd rec97371911 
+./run.sh
+```
+
+## hint 1: build bgslib on linux debian
 
 ```bash
 git clone https://github.com/andrewssobral/bgslibrary 
 cd bgslibrary
-git checkout v3.2.0
+git checkout v3.2.0 #use tested tagged version
 cmake .
 make -j 10
 sudo make install
