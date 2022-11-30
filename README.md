@@ -1,5 +1,10 @@
 # realbugtracker
 
+cite this project with : 
+[![DOI](https://zenodo.org/badge/571799961.svg)](https://zenodo.org/badge/latestdoi/571799961)
+
+
+
 ![movingbug](pics/example.gif "example")
 (See gif shows an example of a moving Nebria brevicollis ( aka bug:) the red border shows the detected contour and the bigger red dot, the centroid of the moving contour)
 
